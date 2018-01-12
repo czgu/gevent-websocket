@@ -239,10 +239,6 @@ class WebSocketHandler(WSGIHandler):
 
         return self.server.logger
 
-    def log_request(self):
-        if '101' not in str(self.status):
-            self.logger.info(self.format_request())
-
     @property
     def active_client(self):
         return self.server.clients[self.client_address]
